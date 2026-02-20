@@ -19,7 +19,7 @@ export default function Navbar() {
     >
       <div className="w-full max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="text-xl font-bold tracking-tighter text-white">
-          Tirth.
+          Patel Tirth
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">
@@ -36,7 +36,7 @@ export default function Navbar() {
         </ul>
 
         <Link
-          href="https://github.com/yourusername"
+          href="https://github.com/tirth707"
           target="_blank"
           className="px-4 py-2 text-sm font-medium text-black bg-white rounded-full hover:bg-zinc-200 transition-colors"
         >
