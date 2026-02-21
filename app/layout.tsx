@@ -1,31 +1,13 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import SmoothScroll from "@/components/SmoothScroll";
-import Navbar from "@/components/Navbar";
-import Cursor from "@/components/Cursor";
+"use client";
+import { motion, useScroll } from "framer-motion";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Patel Tirth | Portfolio",
-  description: "IT Student & Full Stack Developer",
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+// Inside your RootLayout or a separate component:
+export function ScrollBar() {
+  const { scrollYProgress } = useScroll();
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Cursor />
-        <SmoothScroll>
-          <Navbar />
-          {children}
-        </SmoothScroll>
-      </body>
-    </html>
+    <motion.div
+      className="fixed top-0 left-0 right-0 h-1 bg-white z-[100] origin-left"
+      style={{ scaleX: scrollYProgress }}
+    />
   );
 }
