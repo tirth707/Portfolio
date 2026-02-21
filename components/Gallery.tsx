@@ -28,6 +28,7 @@ export default function Gallery() {
       }
     );
     
+    // Returning an explicit cleanup function resolves ts(2345)
     return () => {
       animation.kill();
     };
