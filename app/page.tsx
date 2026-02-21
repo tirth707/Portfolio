@@ -1,16 +1,23 @@
-import React from 'react';
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <main className="min-h-[200vh] bg-black text-white selection:bg-white selection:text-black">
-      <div className="flex flex-col items-center justify-center h-screen">
-        <h1 className="text-5xl font-bold tracking-tighter sm:text-7xl">
-          Patel Tirth
-        </h1>
-        <p className="mt-4 text-zinc-400 text-lg sm:text-xl">
-          Information Technology & Full Stack Developer
-        </p>
-      </div>
+    <main className="bg-black text-white">
+      <Hero />
+      
+      {/* Project Preview Section */}
+      <section id="projects" className="py-32 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold mb-20 tracking-tight text-zinc-500">Selected Work</h2>
+          
+          <div className="group relative overflow-hidden rounded-2xl bg-zinc-900 aspect-video flex items-center justify-center">
+             <div className="text-center p-10">
+                <h3 className="text-3xl font-bold mb-4">RideOn Vehicle Rental</h3>
+                <p className="text-zinc-400 max-w-md">React Native application with Firebase integration and GPS features.</p>
+             </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
