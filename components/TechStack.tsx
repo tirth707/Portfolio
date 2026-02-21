@@ -13,20 +13,19 @@ export default function TechStack() {
     <section className="py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold mb-16 text-zinc-500 text-center tracking-tighter">Tech Stack</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          {stacks.map((stack, i) => (
-            <div key={i} className="group p-8 border-r last:border-none border-zinc-900">
-              <h3 className="text-zinc-500 font-mono text-xs uppercase mb-6">{stack.title}</h3>
-              <div className="space-y-4">
-                // Change stack.items.map to stack.tools.map
-{stack.tools.map((item, idx) => (
-  <p key={idx} className="text-2xl font-bold group-hover:scale-110 transition-transform cursor-default">
-    {item}
-  </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          // Inside components/TechStack.tsx
+{stacks.map((stack, i) => (
+  <div key={i} className="p-10 rounded-[2.5rem] bg-zinc-900/30 border border-white/5 backdrop-blur-md">
+    <h3 className="text-zinc-500 font-mono text-xs uppercase mb-8 tracking-widest">{stack.title}</h3>
+    <div className="space-y-4">
+      {/* FIXED: Changed stack.items to stack.tools */}
+      {stack.tools.map((tool, idx) => (
+        <p key={idx} className="text-2xl font-bold text-white">{tool}</p>
+      ))}
+    </div>
+  </div>
 ))}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>

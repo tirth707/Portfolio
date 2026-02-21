@@ -3,52 +3,22 @@
 import { motion } from "framer-motion";
 
 export default function Experience() {
-  const experiences = [
-    {
-      role: "Web Developer Intern",
-      company: "CARE Group Sight Solution Pvt. Ltd.",
-      period: "Internship Experience",
-      description: [
-        "Assisted in developing and maintaining web application modules using modern web technologies.",
-        "Worked on backend integrations and database operations.",
-        "Collaborated within structured development workflows and deadlines.",
-        "Gained exposure to software development life cycle (SDLC) practices."
-      ]
-    }
-  ];
-
   return (
-    <section id="experience" className="py-32 px-6 bg-black">
+    <section className="py-32 px-6 bg-[#080808]">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold mb-20 tracking-tight text-zinc-500">Experience</h2>
-        
-        <div className="space-y-24">
-          {experiences.map((exp, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="grid grid-cols-1 md:grid-cols-12 gap-8"
-            >
-              <div className="md:col-span-4">
-                <p className="text-zinc-500 font-mono text-sm mb-2">{exp.period}</p>
-                <h3 className="text-2xl font-bold text-white">{exp.role}</h3>
-                <p className="text-zinc-400 mt-1">{exp.company}</p>
-              </div>
-              
-              <div className="md:col-span-8">
-                <ul className="space-y-6">
-                  {exp.description.map((item, i) => (
-                    <li key={i} className="text-zinc-400 text-lg leading-relaxed border-l border-zinc-800 pl-6 hover:border-white transition-colors duration-500">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
-          ))}
+        <h2 className="text-zinc-500 text-sm font-bold uppercase tracking-widest mb-20">Professional Experience</h2>
+        <div className="group border-t border-zinc-800 py-16 grid grid-cols-1 md:grid-cols-12 gap-8">
+          <div className="md:col-span-4">
+            <h3 className="text-2xl font-bold">Web Developer Intern</h3>
+            <p className="text-zinc-500 mt-1">CARE Group Sight Solution Pvt. Ltd.</p>
+          </div>
+          <div className="md:col-span-8">
+            <ul className="space-y-4 text-zinc-400 text-lg">
+              <li className="flex gap-4"><span>—</span> Assisted in maintaining web application modules.</li>
+              <li className="flex gap-4"><span>—</span> Handled backend integration and database tasks.</li>
+              <li className="flex gap-4"><span>—</span> Collaborated in a structured software development life cycle (SDLC).</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

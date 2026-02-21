@@ -4,23 +4,21 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Cursor from "@/components/Cursor";
+import SocialDock from "@/components/SocialDock";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Patel Tirth | Portfolio",
-  description: "IT Student & Full Stack Developer",
+  description: "B.Tech IT Student & Full Stack Developer",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-black text-white antialiased selection:bg-white selection:text-black`}>
         <Cursor />
+        <SocialDock />
         <SmoothScroll>
           <Navbar />
           {children}

@@ -1,48 +1,51 @@
 import Hero from "@/components/Hero";
-import Reveal from "@/components/Reveal";
 import AcademicBento from "@/components/AcademicBento";
 import TechStack from "@/components/TechStack";
 import Experience from "@/components/Experience";
 import ProjectGallery from "@/components/ProjectGallery";
-import ProjectTerminal from "@/components/ProjectTerminal";
 import Contact from "@/components/Contact";
+import Reveal from "@/components/Reveal";
 
 export default function Home() {
   return (
-    <main className="bg-black text-white relative">
+    <main className="bg-black text-white">
+      {/* 1. Hero: Takes up the full first screen */}
       <Hero />
       
-      <Reveal>
-        <AcademicBento />
-      </Reveal>
+      {/* 2. Content Container: Adds 40 units of space between every section */}
+      <div className="flex flex-col gap-y-40 pb-40">
+        
+        {/* Education Section */}
+        <Reveal>
+          <section className="px-6">
+            <AcademicBento />
+          </section>
+        </Reveal>
 
-      <Reveal>
-        <section className="py-10 px-6 max-w-7xl mx-auto">
-          <div className="p-8 rounded-3xl bg-zinc-900/50 border border-white/5">
-            <h3 className="text-zinc-500 font-mono text-xs mb-4 uppercase">Foundation</h3>
-            <p className="text-xl">
-              Completed Diploma in IT at Parul Polytechnic with 7.69 CGPA[cite: 38, 40].
-            </p>
-          </div>
-        </section>
-      </Reveal>
+        {/* Tech Stack Section */}
+        <Reveal>
+          <section className="px-6">
+            <TechStack />
+          </section>
+        </Reveal>
 
-      <Reveal>
-        <TechStack />
-      </Reveal>
+        {/* Professional Journey */}
+        <Reveal>
+          <section className="px-6">
+            <Experience />
+          </section>
+        </Reveal>
 
-      <Reveal>
-        <Experience />
-      </Reveal>
+        {/* Projects */}
+        <Reveal>
+          <section className="px-6">
+            <ProjectGallery />
+          </section>
+        </Reveal>
 
-      <Reveal>
-        <ProjectGallery />
-      </Reveal>
+      </div>
 
-      <Reveal>
-        <ProjectTerminal />
-      </Reveal>
-
+      {/* 3. Footer */}
       <Contact />
     </main>
   );

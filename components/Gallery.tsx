@@ -10,29 +10,30 @@ export default function Gallery() {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 
- useEffect(() => {
-    const animation = gsap.fromTo(
-      sectionRef.current,
-      { translateX: 0 },
-      {
-        translateX: "-300vw",
-        ease: "none",
-        duration: 1,
-        scrollTrigger: {
-          trigger: triggerRef.current,
-          start: "top top",
-          end: "2000 top",
-          scrub: 0.6,
-          pin: true,
-        },
-      }
-    );
-    
-    // Returning an explicit cleanup function resolves ts(2345)
-    return () => {
-      animation.kill();
-    };
-  }, []);
+ // Inside components/Gallery.tsx
+useEffect(() => {
+  const animation = gsap.fromTo(
+    sectionRef.current,
+    { translateX: 0 },
+    {
+      translateX: "-300vw",
+      ease: "none",
+      duration: 1,
+      scrollTrigger: {
+        trigger: triggerRef.current,
+        start: "top top",
+        end: "2000 top",
+        scrub: 0.6,
+        pin: true,
+      },
+    }
+  );
+
+  // Return an explicit function to fix the type error
+  return () => {
+    animation.kill();
+  };
+}, []);
 
   return (
     <section className="overflow-hidden">
