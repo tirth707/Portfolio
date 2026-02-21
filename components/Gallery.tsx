@@ -11,7 +11,6 @@ export default function Gallery() {
   const triggerRef = useRef(null);
 
  useEffect(() => {
-    // Save the animation to a variable
     const animation = gsap.fromTo(
       sectionRef.current,
       { translateX: 0 },
@@ -29,7 +28,6 @@ export default function Gallery() {
       }
     );
     
-    // Return an explicit cleanup function
     return () => {
       animation.kill();
     };
