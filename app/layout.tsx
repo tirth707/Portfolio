@@ -1,28 +1,25 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "@/components/SmoothScroll";
-import Navbar from "@/components/Navbar";
 import Cursor from "@/components/Cursor";
-import SocialDock from "@/components/SocialDock";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Patel Tirth | Portfolio",
-  description: "B.Tech IT Student & Full Stack Developer",
+  title: "Tirth Patel | Portfolio",
+  description: "Full Stack Software Engineer & B.Tech IT Student",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-black text-white antialiased selection:bg-white selection:text-black`}>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.className} cursor-none`}>
         <Cursor />
-        <SocialDock />
-        <SmoothScroll>
-          <Navbar />
-          {children}
-        </SmoothScroll>
+        {children}
       </body>
     </html>
   );
